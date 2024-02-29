@@ -27,7 +27,11 @@ const Login = () => {
         // return;
         auth.signIn(user)
             .then(() => {
-                navigate(from, { replace: true });
+                if (auth.isLoggedInAs(["ADMIN"])) {
+                    navigate("/add", { replace: true });
+                } else {
+                    navigate(from, { replace: true });
+                }
             })
             .catch((err) => {
                 setErr(err);
