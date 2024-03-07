@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addCategory, addRecipe } from "../services/apiFacade";
+import { addCategory } from "../services/apiFacade";
 
 export default function CategoryForm() {
     const [input, setInput] = useState("");
